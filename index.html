@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Exception Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Delivery Exception Dashboard</h1>
+
+    <div class="stats">
+    <div class="card">
+        <h3>Total Issues</h3>
+        <p id="totalCount">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Open Issues</h3>
+        <p id="openCount">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Resolved Issues</h3>
+        <p id="resolvedCount">0</p>
+    </div>
+</div>
+<h2>Report New Issue</h2>
+
+    <form id="issueForm">
+
+        <label>Delivery ID:</label><br>
+        <input type="text" id="deliveryId" required><br><br>
+
+        <label>Customer Name:</label><br>
+        <input type="text" id="customerName" required><br><br>
+
+        <label>Issue Type:</label><br>
+        <select id="issueType">
+            <option>Address Not Found</option>
+            <option>Customer Not Available</option>
+            <option>Payment Issue</option>
+            <option>Package Damaged</option>
+        </select>
+
+        <br><br>
+
+        <label>Priority:</label><br>
+
+        <input type="radio" name="priority" value="Low" checked>
+        <label>Low</label>
+
+        <input type="radio" name="priority" value="Medium">
+        <label>Medium</label>
+
+        <input type="radio" name="priority" value="High">
+        <label>High</label>
+
+        <br><br>
+
+        <label>Notes:</label><br>
+        <textarea id="notes" rows="4"></textarea>
+
+        <br><br>
+
+        <button type="submit">Report Issue</button>
+
+    </form>
+
+    <hr>
+
+    <h2>Filters</h2>
+
+    <label>Issue Type:</label>
+
+    <select id="issueFilter">
+        <option>All</option>
+        <option>Address Not Found</option>
+        <option>Customer Not Available</option>
+        <option>Payment Issue</option>
+        <option>Package Damaged</option>
+    </select>
+
+    <br><br>
+
+    <label>Status:</label>
+
+    <select id="statusFilter">
+        <option>All</option>
+        <option>Open</option>
+        <option>Resolved</option>
+    </select>
+
+    <hr>
+
+    <h2>Reported Issues</h2>
+
+    <table id="issuesTable">
+
+        <thead>
+            <tr>
+                <th>Delivery ID</th>
+                <th>Customer Name</th>
+                <th>Issue Type</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody id="tableBody">
+
+        </tbody>
+
+    </table>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
